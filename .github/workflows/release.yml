@@ -68,5 +68,5 @@ jobs:
             mvn $MAVEN_OPTION build-helper:parse-version release:perform -B"
           fi
 
-          echo "Do mvn deploy
+          echo "Do mvn deploy"
           mvn deploy
