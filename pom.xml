@@ -5,7 +5,7 @@
 
     <groupId>org.liquibase.ext</groupId>
     <artifactId>liquibase-athena</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.0</version>
     <packaging>jar</packaging>
 
     <description>Liquibase extesion for AWS Athena.</description>
