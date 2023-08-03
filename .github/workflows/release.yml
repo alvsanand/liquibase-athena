@@ -49,15 +49,15 @@ jobs:
           if [[ "${{ inputs.release_type }}" == "major" ]]; then
               echo "Increase the major version."
               
-              MAVEN_OPTION="$MAVEN_OPTION -DdevelopmentVersion=\${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT"
+              MAVEN_OPTION="$MAVEN_OPTION -DreleaseVersion=\${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT"
           elif [[ "${{ inputs.release_type }}" == "minor" ]]; then
               echo "Increase the minor version."
               
-              MAVEN_OPTION="$MAVEN_OPTION -DdevelopmentVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.0-SNAPSHOT"
+              MAVEN_OPTION="$MAVEN_OPTION -DreleaseVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.0-SNAPSHOT"
           else
               echo "Increase the patch version."
               
-              MAVEN_OPTION="$MAVEN_OPTION -DdevelopmentVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT"
+              MAVEN_OPTION="$MAVEN_OPTION -DreleaseVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT"
           fi
 
           echo "Do mvn release:prepare with options $MAVEN_OPTION"
@@ -65,7 +65,7 @@ jobs:
 
           if [[ ("$?" -eq 0) && ($SKIP_PERFORM == "false") ]]; then
             echo "Do mvn release:perform with options $MAVEN_OPTION"
-            mvn $MAVEN_OPTION build-helper:parse-version release:perform -B"
+            mvn $MAVEN_OPTION build-helper:parse-version release:perform -B
           fi
 
           echo "Do mvn deploy"
