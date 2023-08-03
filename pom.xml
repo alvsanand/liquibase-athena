@@ -19,8 +19,8 @@
     </licenses>
 
     <scm>
-        <developerConnection>scm:git:https://${env.GITHUB_TOKEN}@github.com/alvsanand/liquibase-athena.git</developerConnection>
-        <connection>scm:git:https://${env.GITHUB_TOKEN}@github.com/alvsanand/liquibase-athena.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/alvsanand/liquibase-athena.git</developerConnection>
+        <connection>scm:git:ssh://git@github.com/alvsanand/liquibase-athena.git</connection>
         <url>https://github.com/alvsanand/liquibase-athena/tree/master</url>
     </scm>
 
