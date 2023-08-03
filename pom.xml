@@ -4,7 +4,7 @@
 
     <groupId>org.liquibase.ext</groupId>
     <artifactId>liquibase-athena</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <description>Liquibase extesion for AWS Athena.</description>
@@ -20,7 +20,7 @@
     <scm>
         <connection>scm:git:https://${env.GITHUB_TOKEN}@github.com/alvsanand/liquibase-athena.git</connection>
         <url>https://github.com/alvsanand/liquibase-athena</url>
-        <tag>liquibase-athena-0.2.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
