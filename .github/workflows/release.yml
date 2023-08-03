@@ -46,11 +46,11 @@ jobs:
           git config --global user.name "release-bot";
           git config --global user.email "release-bot@github.com";
 
-          if [[ "${{ inputs.environment }}" == "major" ]]; then
+          if [[ "${{ inputs.release_type }}" == "major" ]]; then
               echo "Increase the major version."
               
               MAVEN_OPTION="$MAVEN_OPTION -DdevelopmentVersion=\${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT"
-          elif [[ "${{ inputs.environment }}" == "minor" ]]; then
+          elif [[ "${{ inputs.release_type }}" == "minor" ]]; then
               echo "Increase the minor version."
               
               MAVEN_OPTION="$MAVEN_OPTION -DdevelopmentVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.0-SNAPSHOT"
@@ -63,14 +63,10 @@ jobs:
           echo "Do mvn release:prepare with options $MAVEN_OPTION"
           mvn $MAVEN_OPTION build-helper:parse-version release:prepare -B
 
-          # do release if prepare did not fail
           if [[ ("$?" -eq 0) && ($SKIP_PERFORM == "false") ]]; then
             echo "Do mvn release:perform with options $MAVEN_OPTION"
             mvn $MAVEN_OPTION build-helper:parse-version release:perform -B"
           fi
 
-          # rollback release if prepare or perform failed
-          if [[ "$?" -ne 0 ]] ; then
-            echo "Rolling back release after failure"
-            mvn $MAVEN_OPTION release:rollback -B"
-          fi
+          echo "Do mvn deploy
+          mvn deploy
