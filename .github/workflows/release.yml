@@ -26,7 +26,7 @@ jobs:
           maven-args: "validate"
 
       - name: Build and Test
-        uses: qcastel/github-actions-maven-cmd@1.0.1
+        uses: qcastel/github-actions-maven-cmd@master
         with:
           maven-args: "clean install -Ddockerfile.skip -DdockerCompose.skip -Djib.skip"
 
