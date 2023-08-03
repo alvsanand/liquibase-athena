@@ -19,7 +19,7 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:http:/${env.GITHUB_TOKEN}github.com/alvsanand/liquibase-athena.git</connection>
+        <connection>scm:git:https://${env.GITHUB_TOKEN}@github.com/alvsanand/liquibase-athena.git</connection>
         <url>https://github.com/alvsanand/liquibase-athena</url>
         <tag>HEAD</tag>
     </scm>
