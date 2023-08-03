@@ -17,9 +17,8 @@ These instructions will help you get the extension up and running on your local 
 
 ### Pre-requisites
 
-The following dependencies have to be available in classpath or installed manually using Maven:
+The following dependencies have to be available before using it:
 
-* **[AthenaJDBC42](<https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html>)**
 * **[Github Token](https://docs.github.com/en/packages/learn-github-packages/about-permissions-for-github-packages)** with ```read:package``` permissions.
 
 ### Liquibase CLI
