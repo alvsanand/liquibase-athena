@@ -20,18 +20,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Maven external dependencies
-        uses: qcastel/github-actions-maven-cmd@master
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          maven-args: "validate"
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Install dependencies
+        run: mvn validate
 
       - name: Build and Test
-        uses: qcastel/github-actions-maven-cmd@master
-        with:
-          maven-args: "clean install -Ddockerfile.skip -DdockerCompose.skip -Djib.skip"
+        run: mvn validate
 
       - name: Release
-        uses: qcastel/github-actions-maven-release@v1.12.31
+        uses: qcastel/github-actions-maven-release@master
         env:
           JAVA_HOME: /usr/lib/jvm/java-11-openjdk/
         with:
