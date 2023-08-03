@@ -63,10 +63,10 @@ jobs:
           echo "Do mvn release:prepare with options $MAVEN_OPTION"
           mvn $MAVEN_OPTION build-helper:parse-version release:prepare -B
 
-          if [[ ("$?" -eq 0) && ($SKIP_PERFORM == "false") ]]; then
+          if [[ ("$?" -eq 0) ]]; then
+            echo "Do mvn deploy"
+            mvn deploy
+
             echo "Do mvn release:perform with options $MAVEN_OPTION"
             mvn $MAVEN_OPTION build-helper:parse-version release:perform -B
           fi
-
-          echo "Do mvn deploy"
-          mvn deploy
