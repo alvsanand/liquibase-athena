@@ -1,3 +1,5 @@
+name: Release
+
 on:
   workflow_dispatch:
     inputs:
@@ -27,6 +29,6 @@ jobs:
       - name: Release
         uses: qcastel/github-actions-maven-release@v1.12.31
         with:
-          version-patch: ${{ inputs.environment == "patch"  }}
-          version-minor: ${{ inputs.environment == "minor"  }}
-          version-major: ${{ inputs.environment == "major"  }}
+          version-patch: ${{ inputs.environment == 'patch' && 'true' }}
+          version-minor: ${{ inputs.environment == 'minor' && 'true' }}
+          version-major: ${{ inputs.environment == 'major' && 'true' }}
