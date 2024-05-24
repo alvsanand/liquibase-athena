@@ -21,8 +21,8 @@ public class AthenaDatabase extends AbstractJdbcDatabase {
     private static final String NAME = "athena";
     private static final String PRODUCT_NAME = "AWS.Athena";
 
-    private static final String JDBC_PREFIX = "jdbc:awsathena:";
-    private static final String DEFAULT_JDBC_DRIVER = "com.simba.athena.jdbc.Driver";
+    private static final String JDBC_PREFIX = "jdbc:athena:";
+    private static final String DEFAULT_JDBC_DRIVER = "com.amazon.athena.jdbc.AthenaDriver";
     private static final int DEFAULT_JDBC_PORT = 443;
 
     public AthenaDatabase() {

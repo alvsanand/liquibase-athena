@@ -23,7 +23,7 @@ The following dependencies have to be available before using it:
 
 ### Liquibase CLI
 
-Download [the latest released Liquibase extension](https://github.com/alvsanand/liquibase-athena/releases) `.jar` file and place it in the `liquibase/lib` install directory. If you want to use another location, specify the extension `.jar` and `AthenaJDBC42*.jar` file in the `classpath` of your [liquibase.properties file](https://docs.liquibase.com/workflows/liquibase-community/creating-config-properties.html).
+Download [the latest released Liquibase extension](https://github.com/alvsanand/liquibase-athena/releases) `.jar` file and place it in the `liquibase/lib` install directory. If you want to use another location, specify the extension `.jar` and `athena-jdbc-*.jar` file in the `classpath` of your [liquibase.properties file](https://docs.liquibase.com/workflows/liquibase-community/creating-config-properties.html).
 
 ### Maven
 

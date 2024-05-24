@@ -11,6 +11,6 @@ public class TestAthenaDatabase {
     // @Test
     public void findDriver() throws IOException {
         DatabaseFactory.getInstance()
-                .findDefaultDriver("jdbc:awsathena://AwsRegion={AWS_REGION};S3OutputLocation=s3://{AWS_S3_BUCKET};");
+                .findDefaultDriver("jdbc:athena://AwsRegion={AWS_REGION};S3OutputLocation=s3://{AWS_S3_BUCKET};");
     }
 }

@@ -32,9 +32,8 @@
 
         <liquibase.version>4.23.0</liquibase.version>
 
-        <athena-driver.url>https://downloads.athena.us-east-1.amazonaws.com/drivers/JDBC/SimbaAthenaJDBC-2.1.0.1000/SimbaAthenaJDBC-2.1.0.1000.zip</athena-driver.url>
-        <athena-driver.complete_version>2.1.0.1000</athena-driver.complete_version>
-        <athena-driver.version>2.1.0</athena-driver.version>
+        <athena-driver.version>3.2.0</athena-driver.version>
+        <athena-driver.url>https://downloads.athena.us-east-1.amazonaws.com/drivers/JDBC/${athena-driver.version}/athena-jdbc-${athena-driver.version}-with-dependencies.jar</athena-driver.url>
 
         <sonar.organization>${organization}</sonar.organization>
         <sonar.projectKey>${sonar.organization}_${project.artifactId}</sonar.projectKey>
@@ -62,8 +61,8 @@
 
         <!-- Non-public Athena dependencies -->
         <dependency>
-            <groupId>com.syncron.amazonaws</groupId>
-            <artifactId>simba-athena-jdbc-driver</artifactId>
+            <groupId>com.amazon.athena</groupId>
+            <artifactId>jdbc</artifactId>
             <version>${athena-driver.version}</version>
         </dependency>
 
@@ -90,7 +89,6 @@
                         <configuration>
                             <url>${athena-driver.url}</url>
                             <outputDirectory>${project.build.directory}</outputDirectory>
-                            <unpack>true</unpack>
                         </configuration>
                     </execution>
                 </executions>
@@ -106,11 +104,11 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>com.syncron.amazonaws</groupId>
-                            <artifactId>simba-athena-jdbc-driver</artifactId>
+                            <groupId>com.amazon.athena</groupId>
+                            <artifactId>jdbc</artifactId>
                             <version>${athena-driver.version}</version>
                             <packaging>jar</packaging>
-                            <file>${project.build.directory}/SimbaAthenaJDBC42-${athena-driver.complete_version}/AthenaJDBC42-${athena-driver.complete_version}.jar</file>
+                            <file>${project.build.directory}/athena-jdbc-${athena-driver.version}-with-dependencies.jar</file>
                         </configuration>
                     </execution>
                 </executions>
